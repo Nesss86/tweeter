@@ -5,7 +5,6 @@ const userHelper    = require("../lib/util/user-helper")
 const express       = require('express');
 const tweetsRoutes  = express.Router();
 
-app.use(express.static('public'));
 
 module.exports = function(DataHelpers) {
 

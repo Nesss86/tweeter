@@ -2,7 +2,8 @@
   border-bottom: 4px solid black;
   display: flex;
   flex-wrap: wrap;
-  padding: 10px 0;
+  padding-bottom: 40px;
+  gap: 10px;
   align-items: center;
   position: relative;
 }
@@ -26,7 +27,6 @@
 .new-tweet textarea::placeholder {
   color: black;
   font-family: 'Source Sans 3', sans-serif;
-  position: relative;
   transform: translateY(10px);
 }
 
@@ -34,7 +34,7 @@
   display: flex;
   justify-content: space-between;
   position: absolute;
-  bottom: -50px;
+  bottom: -60px;
   left: 0;
   width: 100%;
 }
@@ -51,8 +51,20 @@
   font-family: 'Bungee', sans-serif; 
 }
 
+.new-tweet button:focus {
+  outline: 3px solid #1da1f2;
+}
+
+.new-tweet textarea:hover,
+.new-tweet textarea:focus {
+  border: 2px solid #4056A1; 
+  background-color: #f0f8ff; 
+  outline: none; 
+}
+
 .new-tweet button:hover {
   background-color:#2b4ec1;
+  transform: scale(1.05);
 }
 
 .new-tweet .counter {
@@ -60,4 +72,16 @@
   font-size: 16px;
   color: #333;
   font-family: 'Bungee', sans-serif;
+  margin-top: 10px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
