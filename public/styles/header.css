@@ -1,7 +1,8 @@
 header {
   width: 100%; 
   height: 300px;
-  background-color: lightsalmon;
+  background-color: #ffa07a;
+  background-image: url('../images/back-pattern.png');
   display: flex; 
   flex-direction: column; 
   align-items: center; 
