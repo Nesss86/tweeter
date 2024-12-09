@@ -22,6 +22,20 @@ body {
   padding-top: 120px;
 }
 
+main {
+  width: 90%;
+  margin: 0 auto;
+  background-color: inherit;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: inherit;
+  text-align: center;
+}
+
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
