@@ -1,40 +1,48 @@
 /* Tweets container styling */
 .tweets-container {
-  width: 90%; /* Match the width of the New Tweet form */
-  margin: 0 auto; /* Center the container */
-  background-color: #f4f1ec; /* Match the main container background */
-  padding: 10px 0;
-  border-radius: 8px;
-  background-image: none; /* Remove any inherited background image */
+  width: 90%;
+  margin: 20px auto; /* Center and add spacing */
+  padding: 20px 0;
+  background-color: inherit; /* Match the main container background */
 }
 
 /* General tweet styling */
 article.tweet {
-  background-color: #ffffff; /* White background for tweets */
-  border: 2px solid #333333; /* Darker solid border */
-  border-radius: 8px; /* Optional: Rounded corners for a cleaner look */
-  padding: 15px; /* Adjust padding for cleaner spacing */
+  background-color: #ffffff; /* White background */
+  border: 2px solid #333333; /* Dark border */
+  border-bottom: 4px solid #333333; /* Thicker bottom border */
+  border-radius: 8px;
+  padding: 10px 15px; /* Inner padding */
   margin-bottom: 15px; /* Space between tweets */
-  width: 100%; /* Match the container width */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  display: flex; /* Use flexbox */
+  width: 100%; /* Match container width */
+  max-height: 150px; /* Limit height */
+  overflow: hidden; /* Hide overflow */
+  display: flex;
   flex-direction: column; /* Stack header, content, and footer vertically */
-  max-height: 200px; /* Limit the height to a shorter rectangle */
-  overflow: hidden; /* Hide any overflow content */
+  gap: 10px;
+  transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
+}
+
+/* Hover state for tweets */
+article.tweet:hover {
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+  background-color: #f9f9f9; /* Slightly lighter background */
+  border-color: #1da1f2; /* Highlight border color */
 }
 
 /* Header styling */
 article.tweet header {
-  display: flex; /* Flexbox for alignment */
-  justify-content: space-between; /* Space out the left and right content */
-  align-items: flex-start; /* Align items to the top of the container */
-  margin-bottom: 10px; /* Space below the header */
-  position: relative; /* Needed for positioning the username */
+  display: flex;
+  justify-content: space-between; /* Space avatar+name on the left and username on the right */
+  align-items: flex-start; /* Align items to the top */
+  padding-bottom: 5px; /* Add padding below */
+  border-bottom: 1px solid #ddd; /* Optional separator */
 }
 
-/* User info: Avatar and name on the left */
+/* User info (avatar and name on the left) */
 .user-info {
-  display: flex; /* Align avatar and name horizontally */
+  display: flex;
   align-items: center;
 }
 
@@ -42,7 +50,7 @@ article.tweet header {
   width: 40px;
   height: 40px;
   border-radius: 50%; /* Circular avatar */
-  margin-right: 10px; /* Space between avatar and name */
+  margin-right: 10px;
 }
 
 .name {
@@ -51,35 +59,28 @@ article.tweet header {
   color: #333333;
 }
 
-/* Username on the right */
+/* Username styling */
 .handle {
-  font-size: 16px;
+  font-size: 14px;
   color: #657786;
-  position: absolute; /* Absolute positioning to place it in the top-right */
-  top: 0; /* Align to the top of the header */
-  right: 0; /* Align to the right edge of the header */
-  margin: 0; /* Remove any additional margin */
 }
 
 /* Tweet content styling */
 .tweet-content {
   font-size: 14px;
-  line-height: 1.5; /* Proper line spacing */
+  line-height: 1.5;
   color: #14171a;
-  margin: 10px 0; /* Space between content and header/footer */
-  white-space: nowrap; /* Prevent wrapping */
-  overflow: hidden; /* Hide any overflowing text */
-  text-overflow: ellipsis; /* Add ellipsis for clipped text */
+  margin-bottom: 10px;
 }
 
 /* Footer styling */
 article.tweet footer {
-  display: flex; /* Flexbox for alignment */
-  justify-content: space-between; /* Space out timestamp and actions */
-  align-items: center; /* Vertically align footer elements */
-  font-size: 12px;
-  color: #657786;
-  margin-top: 10px; /* Space above the footer */
+  display: flex;
+  justify-content: space-between; /* Space timestamp on left and icons on right */
+  align-items: center;
+  margin-top: auto; /* Push footer to the bottom */
+  padding-top: 5px; /* Add padding above */
+  border-top: 1px solid #ddd; /* Optional separator */
 }
 
 .timestamp {
@@ -89,11 +90,12 @@ article.tweet footer {
 
 .actions {
   display: flex; /* Align icons horizontally */
+  gap: 10px; /* Space between icons */
 }
 
 .actions i {
-  margin-left: 10px;
-  color: #657786;
+  color: #657786; /* Default icon color */
+  font-size: 16px; /* Icon size */
   cursor: pointer;
   transition: color 0.3s ease;
 }
@@ -101,15 +103,6 @@ article.tweet footer {
 .actions i:hover {
   color: #1da1f2; /* Highlight icon on hover */
 }
-
-
-
-
-
-
-
-
-
 
 
 
