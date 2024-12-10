@@ -3,6 +3,36 @@
  * https://css-tricks.com/international-box-sizing-awareness-day/
  * Do not modify these two selectors, please
  */
+
+ :root {
+  --primary-bg: #ffffff; /* Background for tweets and other elements */
+  --primary-border: #333333; /* Border color for tweets */
+  --secondary-text: #657786; /* Secondary text color */
+  --hover-highlight: #1da1f2; /* Highlight color for hover states */
+}
+
+/* Existing global styles */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* Global layout stuff */
+body {
+  color: #545149;
+  background-color: #f4f1ec; /* Background color for the entire page */
+  font-size: 24px;
+  font-family: 'Source Sans 3', sans-serif;
+  padding-top: 120px;
+}
+
+main, .container {
+  background-color: var(--primary-bg); /* Updated to use CSS variable */
+  background-image: none;
+}
+
 html {
   box-sizing: border-box;
 }

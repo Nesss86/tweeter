@@ -2,15 +2,16 @@
 .tweets-container {
   width: 90%;
   margin: 20px auto; /* Center and add spacing */
-  padding: 20px 0;
+  padding: 20px;
   background-color: inherit; /* Match the main container background */
+  border-radius: 8px;
 }
 
 /* General tweet styling */
 article.tweet {
-  background-color: #ffffff; /* White background */
-  border: 2px solid #333333; /* Dark border */
-  border-bottom: 4px solid #333333; /* Thicker bottom border */
+  background-color: var(--primary-bg); /* White background */
+  border: 2px solid var(--primary-border); /* Dark border */
+  border-bottom: 4px solid var(--primary-border); /* Thicker bottom border */
   border-radius: 8px;
   padding: 10px 15px; /* Inner padding */
   margin-bottom: 15px; /* Space between tweets */
@@ -62,7 +63,7 @@ article.tweet header {
 /* Username styling */
 .handle {
   font-size: 14px;
-  color: #657786;
+  color: var(--secondary-text);
 }
 
 /* Tweet content styling */
@@ -94,14 +95,14 @@ article.tweet footer {
 }
 
 .actions i {
-  color: #657786; /* Default icon color */
+  color: var(--secondary-text);
   font-size: 16px; /* Icon size */
   cursor: pointer;
   transition: color 0.3s ease;
 }
 
 .actions i:hover {
-  color: #1da1f2; /* Highlight icon on hover */
+  color: var(--hover-highlight);
 }
 
 
