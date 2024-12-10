@@ -8,6 +8,7 @@ nav {
   color: #FFFFFF; /* Default font color */
   padding: 0 1.5em; /* Add 1.5em space on left and right */
   position: fixed; /* Fix to the top */
+  z-index: 1000;
 }
 
 nav span {

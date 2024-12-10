@@ -1,0 +1,116 @@
+/* Tweets container styling */
+.tweets-container {
+  width: 90%; /* Match the width of the New Tweet form */
+  margin: 0 auto; /* Center the container */
+  background-color: #f4f1ec; /* Match the main container background */
+  padding: 10px 0;
+  border-radius: 8px;
+  background-image: none; /* Remove any inherited background image */
+}
+
+/* General tweet styling */
+article.tweet {
+  background-color: #ffffff; /* White background for tweets */
+  border: 2px solid #333333; /* Darker solid border */
+  border-radius: 8px; /* Optional: Rounded corners for a cleaner look */
+  padding: 15px; /* Adjust padding for cleaner spacing */
+  margin-bottom: 15px; /* Space between tweets */
+  width: 100%; /* Match the container width */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  display: flex; /* Use flexbox */
+  flex-direction: column; /* Stack header, content, and footer vertically */
+  max-height: 200px; /* Limit the height to a shorter rectangle */
+  overflow: hidden; /* Hide any overflow content */
+}
+
+/* Header styling */
+article.tweet header {
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space out the left and right content */
+  align-items: flex-start; /* Align items to the top of the container */
+  margin-bottom: 10px; /* Space below the header */
+  position: relative; /* Needed for positioning the username */
+}
+
+/* User info: Avatar and name on the left */
+.user-info {
+  display: flex; /* Align avatar and name horizontally */
+  align-items: center;
+}
+
+.tweet-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Circular avatar */
+  margin-right: 10px; /* Space between avatar and name */
+}
+
+.name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #333333;
+}
+
+/* Username on the right */
+.handle {
+  font-size: 16px;
+  color: #657786;
+  position: absolute; /* Absolute positioning to place it in the top-right */
+  top: 0; /* Align to the top of the header */
+  right: 0; /* Align to the right edge of the header */
+  margin: 0; /* Remove any additional margin */
+}
+
+/* Tweet content styling */
+.tweet-content {
+  font-size: 14px;
+  line-height: 1.5; /* Proper line spacing */
+  color: #14171a;
+  margin: 10px 0; /* Space between content and header/footer */
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Hide any overflowing text */
+  text-overflow: ellipsis; /* Add ellipsis for clipped text */
+}
+
+/* Footer styling */
+article.tweet footer {
+  display: flex; /* Flexbox for alignment */
+  justify-content: space-between; /* Space out timestamp and actions */
+  align-items: center; /* Vertically align footer elements */
+  font-size: 12px;
+  color: #657786;
+  margin-top: 10px; /* Space above the footer */
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #657786;
+}
+
+.actions {
+  display: flex; /* Align icons horizontally */
+}
+
+.actions i {
+  margin-left: 10px;
+  color: #657786;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.actions i:hover {
+  color: #1da1f2; /* Highlight icon on hover */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

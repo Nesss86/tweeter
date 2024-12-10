@@ -13,10 +13,9 @@ html {
 /*
  * Global layout stuff
  */
-
-body {
+ body {
   color: #545149;
-  background-color: #f4f1ec;
+  background-color: #f4f1ec; /* Background color for the entire page */
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
   padding-top: 120px;
@@ -25,11 +24,19 @@ body {
 main, .container {
   width: 90%;
   margin: 0 auto;
-  background-color: inherit;
+  background-color: #ffffff; /* Set a uniform white background */
   padding: 20px;
   text-align: center;
+  border-radius: 8px; /* Optional: Rounded corners for the main container */
 }
 
+.new-tweet {
+  margin-bottom: 75px; /* Adjust as needed for desired spacing */
+}
+
+.tweets-container {
+  margin-top: 75px; /* Add extra space above the Tweets container */
+}
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions

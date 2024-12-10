@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4pP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css">
-    
+    <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -44,8 +44,9 @@
       </div>
     </header>
 
-    <!-- Page-specific (main) content here -->
+    <!-- Main Container -->
     <main class="container">
+      <!-- New Tweet Section -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
         <form action="/tweets/" method="POST">
@@ -57,9 +58,62 @@
           </div>
         </form>
       </section>
+
+      <!-- Tweets Container -->
+      <section class="tweets-container">
+        <!-- Example Tweet 1 -->
+        <article class="tweet">
+          <header>
+            <div class="user-info">
+              <img src="/images/julie-avatar.jpg" alt="Avatar of Julie" class="tweet-avatar">
+              <span class="name">Julie Smith</span>
+            </div>
+            <span class="handle">@julie123</span>
+          </header>
+          <p class="tweet-content">
+            Loving the new features on Tweeter! 🐦 #excited
+          </p>
+          <footer>
+            <span class="timestamp">5 minutes ago</span>
+            <div class="actions">
+              <i class="fa fa-flag"></i>
+              <i class="fa fa-retweet"></i>
+              <i class="fa fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+
+        <!-- Example Tweet 2 -->
+        <article class="tweet">
+          <header>
+            <div class="user-info">
+              <img src="/images/dave-avatar.jpg" alt="Avatar of Alex" class="tweet-avatar">
+              <span class="name">Dave Johnson</span>
+            </div>
+            <span class="handle">@davej</span>
+          </header>
+          <p class="tweet-content">
+            Just made my first tweet with Tweeter! #newbie
+          </p>
+          <footer>
+            <span class="timestamp">10 minutes ago</span>
+            <div class="actions">
+              <i class="fa fa-flag"></i>
+              <i class="fa fa-retweet"></i>
+              <i class="fa fa-heart"></i>
+            </div>
+          </footer>
+        </article>
+      </section>
     </main>
   </body>
 </html>
+
+
+
+
+
+
 
 
 
