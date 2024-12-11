@@ -1,10 +1,7 @@
 /* Tweets container styling */
-.tweets-container {
-  width: 90%;
-  margin: 20px auto; /* Center and add spacing */
-  padding: 20px;
-  background-color: inherit; /* Match the main container background */
-  border-radius: 8px;
+#tweets-container {
+  width: 90%; /* Match width of the .new-tweet section */
+  margin: 0 auto; /* Center the container */
 }
 
 /* General tweet styling */
@@ -15,12 +12,13 @@ article.tweet {
   border-radius: 8px;
   padding: 10px 15px; /* Inner padding */
   margin-bottom: 15px; /* Space between tweets */
-  width: 100%; /* Match container width */
-  max-height: 150px; /* Limit height */
-  overflow: hidden; /* Hide overflow */
+  width: 100%; /* Take full width of the #tweets-container */
+  max-height: 150px; /* Prevent large squares */
+  overflow: hidden; /* Hide overflowing content */
+  box-sizing: border-box; /* Include padding and borders in width calculation */
   display: flex;
   flex-direction: column; /* Stack header, content, and footer vertically */
-  gap: 10px;
+  gap: 8px; /* Adjust gap between sections for layout consistency */
   transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for hover effects */
 }
 
@@ -31,6 +29,7 @@ article.tweet:hover {
   background-color: #f9f9f9; /* Slightly lighter background */
   border-color: #1da1f2; /* Highlight border color */
 }
+
 
 /* Header styling */
 article.tweet header {
@@ -52,6 +51,7 @@ article.tweet header {
   height: 40px;
   border-radius: 50%; /* Circular avatar */
   margin-right: 10px;
+  object-fit: cover;
 }
 
 .name {
@@ -69,9 +69,10 @@ article.tweet header {
 /* Tweet content styling */
 .tweet-content {
   font-size: 14px;
-  line-height: 1.5;
+  line-height: 1.4; /* Slightly tighter line spacing for compact layout */
   color: #14171a;
-  margin-bottom: 10px;
+  margin-bottom: 0; /* Remove extra space below text */
+  padding-bottom: 0; /* Ensure no padding pushes content down */
 }
 
 /* Footer styling */
@@ -79,14 +80,17 @@ article.tweet footer {
   display: flex;
   justify-content: space-between; /* Space timestamp on left and icons on right */
   align-items: center;
-  margin-top: auto; /* Push footer to the bottom */
-  padding-top: 5px; /* Add padding above */
-  border-top: 1px solid #ddd; /* Optional separator */
+  padding-top: 5px; /* Minimal padding above */
+  padding-bottom: 5px; /* Ensure internal spacing */
+  border-top: 1px solid #ddd; /* Single separator line */
+  margin-top: -5px; /* Negative margin to bring the footer closer */
 }
 
 .timestamp {
   font-size: 12px;
   color: #657786;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden; /* Prevent overflow issues */
 }
 
 .actions {
@@ -104,7 +108,3 @@ article.tweet footer {
 .actions i:hover {
   color: var(--hover-highlight);
 }
-
-
-
-

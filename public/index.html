@@ -19,6 +19,7 @@
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
     <script type="text/javascript" src="/scripts/client.js"></script>
     <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
   </head>
@@ -60,7 +61,7 @@
       </section>
 
       <!-- Tweets Container -->
-      <section class="tweets-container">
+      <section id="tweets-container">
         <!-- Example Tweet 1 -->
         <article class="tweet">
           <header>
@@ -70,15 +71,15 @@
             </div>
             <span class="handle">@julie123</span>
           </header>
-          <p class="tweet-content">
-            Loving the new features on Tweeter! 🐦 #excited
-          </p>
+          <div class="tweet-content">
+            <p>Loving the new features on Tweeter! 🐦 #excited</p>
+          </div>
           <footer>
-            <span class="timestamp">5 minutes ago</span>
+            <span class="timestamp">${timeago.format(1660000000000)}</span>
             <div class="actions">
-              <FontAwesomeIcon icon={faFlag} />
-              <FontAwesomeIcon icon={faRetweet} />
-              <FontAwesomeIcon icon={faHeart} />
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
             </div>
           </footer>
         </article>
@@ -92,15 +93,15 @@
             </div>
             <span class="handle">@davej</span>
           </header>
-          <p class="tweet-content">
-            Just made my first tweet with Tweeter! #newbie
-          </p>
+          <div class="tweet-content">
+            <p>Just made my first tweet with Tweeter! #newbie</p>
+          </div>
           <footer>
-            <span class="timestamp">10 minutes ago</span>
+            <span class="timestamp">${timeago.format(1660000500000)}</span>
             <div class="actions">
-              <FontAwesomeIcon icon={faFlag} />
-              <FontAwesomeIcon icon={faRetweet} />
-              <FontAwesomeIcon icon={faHeart} />
+              <i class="fas fa-flag"></i>
+              <i class="fas fa-retweet"></i>
+              <i class="fas fa-heart"></i>
             </div>
           </footer>
         </article>
@@ -108,4 +109,5 @@
     </main>
   </body>
 </html>
+
 
