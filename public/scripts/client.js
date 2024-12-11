@@ -5,45 +5,37 @@
  */
 
 $(document).ready(function () {
-  // Fake data taken from initial-tweets.json
-  const data = [
-    {
-      user: {
-        name: "Newton",
-        avatars: "https://i.imgur.com/73hZDYK.png",
-        handle: "@SirIsaac",
-      },
-      content: {
-        text: "If I have seen further it is by standing on the shoulders of giants",
-      },
-      created_at: 1461116232227,
-    },
-    {
-      user: {
-        name: "Descartes",
-        avatars: "https://i.imgur.com/nlhLi3I.png",
-        handle: "@rd",
-      },
-      content: {
-        text: "Je pense, donc je suis",
-      },
-      created_at: 1461113959088,
-    },
-  ];
-
-  // Escape function to sanitize inputs
-  const escape = function (str) {
-    const div = document.createElement("div");
-    div.appendChild(document.createTextNode(str));
-    return div.innerHTML;
+  // Function to fetch tweets from the server
+  const loadTweets = function () {
+    $.ajax({
+      url: "/tweets",
+      method: "GET",
+      dataType: "json", // Expect JSON data from the server
+    })
+      .done(function (tweets) {
+        renderTweets(tweets); // Render tweets dynamically
+      })
+      .fail(function (error) {
+        console.error("Error fetching tweets:", error);
+      });
   };
 
-  // Function to create a tweet element
+  // Function to render tweets
+  const renderTweets = function (tweets) {
+    const $tweetContainer = $("#tweets-container");
+    $tweetContainer.empty(); // Clear the container before rendering
+    for (const tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $tweetContainer.prepend($tweet); // Prepend to show most recent tweets first
+    }
+  };
+
+  // Function to create a tweet element (no changes needed if already implemented)
   const createTweetElement = function (tweet) {
-    const $tweet = $(`
+    return $(`
       <article class="tweet">
         <header>
-          <div class="tweet-user">
+          <div class="user-info">
             <img class="tweet-avatar" src="${escape(tweet.user.avatars)}" alt="User Avatar">
             <span class="name">${escape(tweet.user.name)}</span>
           </div>
@@ -54,7 +46,7 @@ $(document).ready(function () {
         </div>
         <footer>
           <span class="timestamp">${timeago.format(tweet.created_at)}</span>
-          <div class="tweet-actions">
+          <div class="actions">
             <i class="fas fa-flag"></i>
             <i class="fas fa-retweet"></i>
             <i class="fas fa-heart"></i>
@@ -62,42 +54,15 @@ $(document).ready(function () {
         </footer>
       </article>
     `);
-
-    return $tweet;
   };
 
-  // Function to apply timeago formatting to existing tweets
-  const applyTimeagoToExistingTweets = function () {
-    $(".timestamp").each(function () {
-      const time = $(this).attr("data-time"); // Retrieve timestamp from data attribute
-      if (time) {
-        $(this).text(timeago.format(time)); // Format and update the timestamp
-      }
-    });
+  // Escape function for XSS prevention
+  const escape = function (str) {
+    const div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
   };
 
-  // Function to render tweets in reverse chronological order
-  const renderTweets = function (tweets) {
-    const $tweetContainer = $("#tweets-container");
-
-    for (const tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      $tweetContainer.prepend($tweet); // Prepend to the container for reverse chronological order
-    }
-  };
-
-  // Ensure all hardcoded tweets have data-time for timestamps
-  const prepareHardcodedTimestamps = function () {
-    $("#tweets-container .timestamp").each(function () {
-      const staticTime = $(this).text(); // Assume this contains a static value
-      $(this).attr("data-time", staticTime || Date.now()); // Add a data-time attribute
-    });
-  };
-
-  // Prepare and apply timeago to hardcoded tweets
-  prepareHardcodedTimestamps();
-  applyTimeagoToExistingTweets();
-
-  // Render the test data alongside existing tweets
-  renderTweets(data);
+  // Call loadTweets on page load to fetch and display tweets
+  loadTweets();
 });
