@@ -3,7 +3,6 @@ header {
   height: 400px;
   background-color: #ffa07a; /* Header-specific background color */
   background-image: url('../images/back-pattern.png'); /* Header-specific background image */
-  
 }
 
 .profile {

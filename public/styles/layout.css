@@ -25,7 +25,7 @@ body {
   background-color: #f4f1ec; /* Background color for the entire page */
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
-  padding-top: 120px;
+  padding-top: 0;
 }
 
 main, .container {

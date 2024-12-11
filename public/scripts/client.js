@@ -31,14 +31,15 @@ $(document).ready(function () {
     },
   ];
 
+  // Escape function to sanitize inputs
+  const escape = function (str) {
+    const div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   // Function to create a tweet element
   const createTweetElement = function (tweet) {
-    const escape = function (str) {
-      const div = document.createElement("div");
-      div.appendChild(document.createTextNode(str));
-      return div.innerHTML;
-    };
-
     const $tweet = $(`
       <article class="tweet">
         <header>
@@ -75,13 +76,13 @@ $(document).ready(function () {
     });
   };
 
-  // Function to render tweets without clearing the container
+  // Function to render tweets in reverse chronological order
   const renderTweets = function (tweets) {
     const $tweetContainer = $("#tweets-container");
 
     for (const tweet of tweets) {
       const $tweet = createTweetElement(tweet);
-      $tweetContainer.append($tweet); // Append to the container without clearing
+      $tweetContainer.prepend($tweet); // Prepend to the container for reverse chronological order
     }
   };
 
@@ -100,5 +101,3 @@ $(document).ready(function () {
   // Render the test data alongside existing tweets
   renderTweets(data);
 });
-
-
