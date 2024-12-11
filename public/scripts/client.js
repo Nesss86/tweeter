@@ -13,6 +13,7 @@ $(document).ready(function () {
       dataType: "json", // Expect JSON data from the server
     })
       .done(function (tweets) {
+        console.log("Fetched tweets:", tweets); // Debugging log
         renderTweets(tweets); // Render tweets dynamically
       })
       .fail(function (error) {
@@ -30,9 +31,10 @@ $(document).ready(function () {
     }
   };
 
-  // Function to create a tweet element (no changes needed if already implemented)
+  // Function to create a tweet element
   const createTweetElement = function (tweet) {
-    return $(`
+    return $(
+      `
       <article class="tweet">
         <header>
           <div class="user-info">
@@ -53,7 +55,8 @@ $(document).ready(function () {
           </div>
         </footer>
       </article>
-    `);
+    `
+    );
   };
 
   // Escape function for XSS prevention
@@ -62,6 +65,63 @@ $(document).ready(function () {
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
+
+  // Form submission handler with validation
+  const $form = $("#tweet-form");
+  $form.on("submit", function (event) {
+    event.preventDefault(); // Prevent default form submission
+    console.log("Form submission triggered"); // Debugging log
+
+    const $tweetText = $("#tweet-text");
+    const tweetContent = $tweetText.val().trim(); // Get and trim tweet content
+
+    // Validation checks
+    if (!tweetContent) {
+      alert("Error: Tweet content cannot be empty."); // Alert if empty
+      return; // Stop further execution
+    }
+
+    if (tweetContent.length > 140) {
+      alert("Error: Tweet content exceeds the 140 character limit."); // Alert if too long
+      return; // Stop further execution
+    }
+
+    // Serialize form data and send to the server
+    const serializedData = $(this).serialize();
+
+    $.ajax({
+      url: "/tweets",
+      method: "POST",
+      data: serializedData,
+    })
+      .done(function () {
+        console.log("Tweet successfully submitted"); // Debugging log
+        loadTweets(); // Reload tweets dynamically
+        $form[0].reset(); // Clear the form
+        $(".counter").text(140); // Reset the character counter
+      })
+      .fail(function (error) {
+        console.error("Error submitting tweet:", error);
+      });
+  });
+
+  // Character counter logic
+  $(".new-tweet #tweet-text").on("input", function () {
+    const $textarea = $(this);
+    const maxLength = 140;
+    const textLength = $textarea.val().length;
+    const remaining = maxLength - textLength;
+
+    const $counter = $textarea.closest("form").find(".counter");
+
+    $counter.text(remaining);
+
+    if (remaining < 0) {
+      $counter.addClass("over-limit");
+    } else {
+      $counter.removeClass("over-limit");
+    }
+  });
 
   // Call loadTweets on page load to fetch and display tweets
   loadTweets();
