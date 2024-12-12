@@ -4,30 +4,33 @@ Tweeter is a simple, single-page Twitter clone. Users are able to post tweets, a
 
 ## Final Product
 #### Intital Homepage - Desktop
-<img src="public/images/Initial Homepage Desktop.png" alt="Homepage">
+<img src="public/images/Initial Homepage Desktop.png" alt="Homepage Desktop">
 
 
 #### Initial Homepage - Tablet
-<img src="public/images/Homepage.png" alt="Homepage">
+<img src="public/images/Initital Homepage Tablet.png" alt="Homepage Tablet">
 
 
 
 #### Empty Tweet Error Message
-<img src="public/images/Homepage.png" alt="Homepage">
+<img src="public/images/Empty Tweet.png" alt="Empty Tweet">
 
 
 
 #### Tweet Over limit Error Message
-<img src="public/images/Homepage.png" alt="Homepage">
+<img src="public/images/Tweet Overlimit.png" alt="Tweet Overlimit">
 
 
 #### Writing New Tweet
-<img src="public/images/Homepage.png" alt="Homepage">
+<img src="public/images/New Tweet.png" alt="New Tweet">
 
 
 
 #### Posted New Tweet
-<img src="public/images/Homepage.png" alt="Homepage">
+<img src="public/images/Posted Tweet.png" alt="Posted Tweet">
+
+
+<img src="public/images/Posted Tweet 2.png" alt="Posted Tweet List">
 
 
 
