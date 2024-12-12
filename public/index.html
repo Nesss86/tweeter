@@ -35,40 +35,43 @@
       </span>
     </nav>
     
-    <!-- Header Section -->
-    <header>
-      <div class="profile">
-        <img src="/images/profile-hex.png" alt="profile-pic" class="avatar">
-      </div>
-      <br>
-      <div>
-        <h2 class="name">Your Name</h2>
-      </div>
-    </header>
-
     <!-- Main Container -->
     <main class="container">
-      <!-- New Tweet Section -->
-      <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <div class="error-message" style="display: none;">
-          <i class="fas fa-exclamation-circle"></i>
-          <span class="error-text">Your error message here</span>
+      <!-- Left column: Header -->
+      <header>
+        <div class="profile">
+          <img src="/images/julie-avatar.jpg" alt="profile-pic" class="avatar">
         </div>
-        <form id="tweet-form" method="POST">
-          <label for="tweet-text" class="visually-hidden">What are you humming about?</label>
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div>
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>
-        </form>
-      </section>
+        <br>
+        <div>
+          <h2 class="name">Sarah Smith</h2>
+        </div>
+      </header>
 
-      <!-- Tweets Container -->
-      <section id="tweets-container">
-        <!-- Dynamically Rendered Tweets Will Appear Here -->
-      </section>
+      <!-- Right column: Content -->
+      <div class="content">
+        <!-- New Tweet Section -->
+        <section class="new-tweet">
+          <h2>Compose Tweet</h2>
+          <div class="error-message" style="display: none;">
+            <i class="fas fa-exclamation-circle"></i>
+            <span class="error-text">Your error message here</span>
+          </div>
+          <form id="tweet-form" method="POST">
+            <label for="tweet-text" class="visually-hidden">What are you humming about?</label>
+            <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+            <div>
+              <button type="submit">Tweet</button>
+              <output name="counter" class="counter" for="tweet-text">140</output>
+            </div>
+          </form>
+        </section>
+
+        <!-- Tweets Container -->
+        <section id="tweets-container">
+          <!-- Dynamically Rendered Tweets Will Appear Here -->
+        </section>
+      </div>
     </main>
   </body>
 </html>

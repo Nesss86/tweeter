@@ -67,3 +67,18 @@ nav.scrolled {
   background-color: rgba(64, 86, 161, 0.9); 
   transition: background-color 0.3s ease;
 }
+
+.icon {
+  display: inline-block;
+  animation: bounce 1s infinite; /* Apply the animation */
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0); /* Start and end position */
+  }
+  50% {
+    transform: translateY(-10px); /* Move up by 10px */
+  }
+}
+
