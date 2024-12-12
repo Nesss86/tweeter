@@ -8,12 +8,12 @@ Tweeter is a simple, single-page Twitter clone. Users are able to post tweets, a
 
 
 #### Initial Homepage - Tablet
-<img src="public/images/Initital Homepage Tablet.png" alt="Homepage Tablet">
+<img src="public/images/Initial Homepage Tablet.png" alt="Homepage Tablet">
 
 
 
 #### Empty Tweet Error Message
-<img src="public/images/Empty Tweet.png" alt="Empty Tweet">
+<img src="public/images/Empty Tweet Error.png" alt="Empty Tweet">
 
 
 
