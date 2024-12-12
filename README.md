@@ -13,7 +13,7 @@ Tweeter is a simple, single-page Twitter clone. Users are able to post tweets, a
 
 
 #### Empty Tweet Error Message
-<img src="public/images/Empty Tweet Error.png" alt="Empty Tweet">
+<img src="public/images/Empty Tweet Error.png" alt="Empty Tweet Error">
 
 
 
