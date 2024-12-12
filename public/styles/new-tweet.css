@@ -95,3 +95,27 @@
   color: red !important;
   font-weight: bold;
 }
+
+
+.error-message {
+  display: none; 
+  background-color: #ffdddd; 
+  color: #d8000c; 
+  border: 1px solid #d8000c; 
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.error-message .error-text {
+  margin: 0;
+}
+
+.error-message i {
+  font-size: 16px; 
+}

@@ -51,6 +51,10 @@
       <!-- New Tweet Section -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <div class="error-message" style="display: none;">
+          <i class="fas fa-exclamation-circle"></i>
+          <span class="error-text">Your error message here</span>
+        </div>
         <form id="tweet-form" method="POST">
           <label for="tweet-text" class="visually-hidden">What are you humming about?</label>
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>

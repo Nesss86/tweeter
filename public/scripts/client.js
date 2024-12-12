@@ -70,40 +70,50 @@ $(document).ready(function () {
   const $form = $("#tweet-form");
   $form.on("submit", function (event) {
     event.preventDefault(); // Prevent default form submission
-    console.log("Form submission triggered"); // Debugging log
-
+  
     const $tweetText = $("#tweet-text");
     const tweetContent = $tweetText.val().trim(); // Get and trim tweet content
-
+    const $errorMessage = $(".error-message"); // Select the error message element
+  
+    // Clear and hide the error message before validation
+    $errorMessage.slideUp().find(".error-text").text("");
+  
     // Validation checks
     if (!tweetContent) {
-      alert("Error: Tweet content cannot be empty."); // Alert if empty
+      $errorMessage
+        .find(".error-text")
+        .text("Error: Tweet content cannot be empty.");
+      $errorMessage.slideDown(); // Show the error message with animation
       return; // Stop further execution
     }
-
+  
     if (tweetContent.length > 140) {
-      alert("Error: Tweet content exceeds the 140 character limit."); // Alert if too long
+      $errorMessage
+        .find(".error-text")
+        .text("Error: Tweet content exceeds the 140 character limit.");
+      $errorMessage.slideDown(); // Show the error message with animation
       return; // Stop further execution
     }
-
+  
     // Serialize form data and send to the server
     const serializedData = $(this).serialize();
-
+  
     $.ajax({
       url: "/tweets",
       method: "POST",
       data: serializedData,
     })
       .done(function () {
-        console.log("Tweet successfully submitted"); // Debugging log
         loadTweets(); // Reload tweets dynamically
         $form[0].reset(); // Clear the form
         $(".counter").text(140); // Reset the character counter
+        $errorMessage.slideUp(); // Hide the error message after successful submission
       })
       .fail(function (error) {
         console.error("Error submitting tweet:", error);
       });
   });
+  
 
   // Character counter logic
   $(".new-tweet #tweet-text").on("input", function () {
