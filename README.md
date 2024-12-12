@@ -4,7 +4,7 @@ Tweeter is a simple, single-page Twitter clone. Users are able to post tweets, a
 
 ## Final Product
 #### Intital Homepage - Desktop
-<img src="public/images/Homepage.png" alt="Homepage">
+<img src="public/images/Initial Homepage Desktop.png" alt="Homepage">
 
 
 #### Initial Homepage - Tablet
