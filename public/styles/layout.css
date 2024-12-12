@@ -5,10 +5,10 @@
  */
 
  :root {
-  --primary-bg: #ffffff; /* Background for tweets and other elements */
-  --primary-border: #333333; /* Border color for tweets */
-  --secondary-text: #657786; /* Secondary text color */
-  --hover-highlight: #1da1f2; /* Highlight color for hover states */
+  --primary-bg: #ffffff; 
+  --primary-border: #333333; 
+  --secondary-text: #657786; 
+  --hover-highlight: #1da1f2;
 }
 
 /* Existing global styles */
@@ -22,22 +22,27 @@ html {
 /* Global layout stuff */
 body {
   color: #545149;
-  background-color: #f4f1ec; /* Background color for the entire page */
+  background-color: #f4f1ec; 
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
-  margin: 0; /* Remove padding from the body */
+  margin: 0;
 }
 
 /* Add padding below the nav for content spacing */
 main, .container {
   background-color: var(--primary-bg);
-  padding: 120px 20px 20px; /* Add top padding for spacing below the nav */
+  padding: 120px 20px 20px; 
 }
 
 .new-tweet {
-  margin-bottom: 75px; /* Adjust as needed for desired spacing */
+  margin-bottom: 75px; 
 }
 
 .tweets-container {
-  margin-top: 50px; /* Add extra space above the Tweets container */
+  margin-top: 50px; 
 }
+
+
+
+
+

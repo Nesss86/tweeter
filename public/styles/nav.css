@@ -1,31 +1,31 @@
 /* Navigation Bar */
 nav {
   display: flex;
-  justify-content: space-between; /* Space out left and right sections */
-  align-items: center; /* Center content vertically */
-  height: 60px; /* Adjusted nav height for consistency */
-  width: 100%; /* Full width */
-  background-color: #4056A1; /* Default background color */
-  color: #FFFFFF; /* Default font color */
-  padding: 0 1.5em; /* Add padding on left and right */
-  position: fixed; /* Fix to the top */
-  z-index: 1000; /* Keep it above other elements */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for effect */
+  justify-content: space-between; 
+  align-items: center; 
+  height: 60px; 
+  width: 100%; 
+  background-color: #4056A1; 
+  color: #FFFFFF; 
+  padding: 0 1.5em; 
+  position: fixed; 
+  z-index: 1000; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 /* Left Section */
 nav .left {
   font-family: 'Bungee', sans-serif;
-  font-size: 24px; /* Adjust font size */
+  font-size: 24px;
 }
 
 /* Right Section */
 nav .right {
   font-family: 'Source Sans 3', sans-serif;
   font-size: 1em; 
-  display: flex; /* Change to flex for better alignment */
+  display: flex; 
   align-items: center;
-  gap: 0.5em; /* Space between elements */
+  gap: 0.5em; 
 }
 
 /* Icon Styling */
@@ -64,6 +64,6 @@ nav .right .icon {
 
 /* Dynamic Background on Scroll */
 nav.scrolled {
-  background-color: rgba(64, 86, 161, 0.9); /* Semi-transparent background */
+  background-color: rgba(64, 86, 161, 0.9); 
   transition: background-color 0.3s ease;
 }
