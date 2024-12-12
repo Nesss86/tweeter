@@ -96,12 +96,11 @@
   font-weight: bold;
 }
 
-
 .error-message {
-  display: none; 
-  background-color: #ffdddd; 
-  color: #d8000c; 
-  border: 1px solid #d8000c; 
+  display: none;
+  background-color: #ffdddd;
+  color: #d8000c;
+  border: 1px solid #d8000c;
   border-radius: 5px;
   padding: 10px 15px;
   margin: 15px 0;
@@ -117,5 +116,6 @@
 }
 
 .error-message i {
-  font-size: 16px; 
+  font-size: 16px;
+  margin-right: 10px;
 }

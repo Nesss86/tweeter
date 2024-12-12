@@ -10,11 +10,10 @@ $(document).ready(function () {
     $.ajax({
       url: "/tweets",
       method: "GET",
-      dataType: "json", // Expect JSON data from the server
+      dataType: "json",
     })
       .done(function (tweets) {
-        console.log("Fetched tweets:", tweets); // Debugging log
-        renderTweets(tweets); // Render tweets dynamically
+        renderTweets(tweets);
       })
       .fail(function (error) {
         console.error("Error fetching tweets:", error);
@@ -33,8 +32,7 @@ $(document).ready(function () {
 
   // Function to create a tweet element
   const createTweetElement = function (tweet) {
-    return $(
-      `
+    return $(`
       <article class="tweet">
         <header>
           <div class="user-info">
@@ -55,8 +53,7 @@ $(document).ready(function () {
           </div>
         </footer>
       </article>
-    `
-    );
+    `);
   };
 
   // Escape function for XSS prevention
@@ -69,35 +66,35 @@ $(document).ready(function () {
   // Form submission handler with validation
   const $form = $("#tweet-form");
   $form.on("submit", function (event) {
-    event.preventDefault(); // Prevent default form submission
-  
+    event.preventDefault();
+
     const $tweetText = $("#tweet-text");
-    const tweetContent = $tweetText.val().trim(); // Get and trim tweet content
-    const $errorMessage = $(".error-message"); // Select the error message element
-  
-    // Clear and hide the error message before validation
-    $errorMessage.slideUp().find(".error-text").text("");
-  
+    const tweetContent = $tweetText.val().trim();
+    const $errorMessage = $(".error-message");
+
+    // Reset error message
+    $errorMessage.stop(true, true).slideUp().find(".error-text").text("");
+
     // Validation checks
     if (!tweetContent) {
       $errorMessage
         .find(".error-text")
         .text("Error: Tweet content cannot be empty.");
-      $errorMessage.slideDown(); // Show the error message with animation
-      return; // Stop further execution
+      $errorMessage.stop(true, true).slideDown(); // Ensure animation always works
+      return;
     }
-  
+
     if (tweetContent.length > 140) {
       $errorMessage
         .find(".error-text")
         .text("Error: Tweet content exceeds the 140 character limit.");
-      $errorMessage.slideDown(); // Show the error message with animation
-      return; // Stop further execution
+      $errorMessage.stop(true, true).slideDown(); // Ensure animation always works
+      return;
     }
-  
+
     // Serialize form data and send to the server
     const serializedData = $(this).serialize();
-  
+
     $.ajax({
       url: "/tweets",
       method: "POST",
@@ -106,14 +103,13 @@ $(document).ready(function () {
       .done(function () {
         loadTweets(); // Reload tweets dynamically
         $form[0].reset(); // Clear the form
-        $(".counter").text(140); // Reset the character counter
-        $errorMessage.slideUp(); // Hide the error message after successful submission
+        $(".counter").text(140); // Reset character counter
+        $errorMessage.stop(true, true).slideUp(); // Hide error message
       })
       .fail(function (error) {
         console.error("Error submitting tweet:", error);
       });
   });
-  
 
   // Character counter logic
   $(".new-tweet #tweet-text").on("input", function () {
@@ -133,6 +129,7 @@ $(document).ready(function () {
     }
   });
 
-  // Call loadTweets on page load to fetch and display tweets
+  // Load tweets on page load
   loadTweets();
 });
+
