@@ -25,35 +25,13 @@ body {
   background-color: #f4f1ec; /* Background color for the entire page */
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
-  padding-top: 0;
+  margin: 0; /* Remove padding from the body */
 }
 
+/* Add padding below the nav for content spacing */
 main, .container {
-  background-color: var(--primary-bg); /* Updated to use CSS variable */
-  background-image: none;
-}
-
-html {
-  box-sizing: border-box;
-}
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-/*
- * Global layout stuff
- */
- body {
-  color: #545149;
-  background-color: #f4f1ec; /* Background color for the entire page */
-  font-size: 24px;
-  font-family: 'Source Sans 3', sans-serif;
-  padding-top: 120px;
-}
-
-main, .container {
-  background-color: #ffffff; /* Set a uniform white background */
-  background-image: none;
+  background-color: var(--primary-bg);
+  padding: 120px 20px 20px; /* Add top padding for spacing below the nav */
 }
 
 .new-tweet {
@@ -63,7 +41,3 @@ main, .container {
 .tweets-container {
   margin-top: 50px; /* Add extra space above the Tweets container */
 }
-
-/*
- * Additional CSS can be defined below or in other CSS files, as per instructions
- */

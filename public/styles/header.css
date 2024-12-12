@@ -3,6 +3,8 @@ header {
   height: 400px;
   background-color: #ffa07a; /* Header-specific background color */
   background-image: url('../images/back-pattern.png'); /* Header-specific background image */
+  margin: 0;
+  padding: 0;
 }
 
 .profile {
@@ -10,6 +12,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding-top: 80px;
 }
 
 header .avatar { /* Scoped exclusively to the header */

@@ -32,7 +32,8 @@ $(document).ready(function () {
 
   // Function to create a tweet element
   const createTweetElement = function (tweet) {
-    return $(`
+    return $(
+      `
       <article class="tweet">
         <header>
           <div class="user-info">
@@ -53,7 +54,8 @@ $(document).ready(function () {
           </div>
         </footer>
       </article>
-    `);
+    `
+    );
   };
 
   // Escape function for XSS prevention
@@ -129,7 +131,17 @@ $(document).ready(function () {
     }
   });
 
+  // Add scroll behavior for the navigation bar
+  $(window).on("scroll", function () {
+    if ($(window).scrollTop() > 50) {
+      $("nav").addClass("scrolled");
+    } else {
+      $("nav").removeClass("scrolled");
+    }
+  });
+
   // Load tweets on page load
   loadTweets();
 });
+
 

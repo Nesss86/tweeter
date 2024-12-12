@@ -1,32 +1,52 @@
+/* Navigation Bar */
 nav {
   display: flex;
   justify-content: space-between; /* Space out left and right sections */
   align-items: center; /* Center content vertically */
-  height: 120px; /* Nav height */
+  height: 60px; /* Adjusted nav height for consistency */
   width: 100%; /* Full width */
   background-color: #4056A1; /* Default background color */
   color: #FFFFFF; /* Default font color */
-  padding: 0 1.5em; /* Add 1.5em space on left and right */
+  padding: 0 1.5em; /* Add padding on left and right */
   position: fixed; /* Fix to the top */
-  z-index: 1000;
+  z-index: 1000; /* Keep it above other elements */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for effect */
 }
 
-nav span {
-  display: flex;
-  align-items: center; /* Center content vertically */
-  font-size: 35px;
-}
-
+/* Left Section */
 nav .left {
   font-family: 'Bungee', sans-serif;
+  font-size: 24px; /* Adjust font size */
 }
 
+/* Right Section */
 nav .right {
-  font-family: 'Source Sans 3', sans-serif; 
+  font-family: 'Source Sans 3', sans-serif;
   font-size: 1em; 
-  display: inline-block; 
-  text-align: center; 
+  display: flex; /* Change to flex for better alignment */
+  align-items: center;
+  gap: 0.5em; /* Space between elements */
 }
+
+/* Icon Styling */
+nav .right .icon {
+  width: 24px; 
+  height: auto; 
+}
+
+/* For smaller screens (Optional for responsiveness) */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 1em;
+  }
+
+  nav .right {
+    justify-content: center;
+  }
+}
+
 
 nav .right strong {
   font-weight: bold; 
@@ -40,4 +60,10 @@ nav .right .icon {
   margin-right: auto;
   width: 24px; 
   height: auto;
+}
+
+/* Dynamic Background on Scroll */
+nav.scrolled {
+  background-color: rgba(64, 86, 161, 0.9); /* Semi-transparent background */
+  transition: background-color 0.3s ease;
 }
