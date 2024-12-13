@@ -1,6 +1,6 @@
 .new-tweet {
-  width: 90%; /* Set the width of the new-tweet section */
-  margin: 0  auto 60px auto; /* Center the section horizontally */
+  width: 90%; 
+  margin: 0  auto 60px auto; 
 }
 
 .new-tweet form {
