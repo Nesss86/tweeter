@@ -9,7 +9,7 @@ This is the fullscreen view of the app.
 
 
 #### Initial Homepage - Tablet
-This the reduced screen tablet view of the app.
+This is the reduced screen tablet view of the app.
 <img src="public/images/Initial Homepage Tablet.png" alt="Homepage Tablet">
 
 
@@ -23,7 +23,7 @@ An error message slides down when a user tries to post an empty tweet. It will r
 
 
 #### Tweet Over limit Error Message
-An errpr message slides down when the user tries to post a tweet that is over 140 chracters. It will restrict them from posting until they have reduced the character count to 140 or below.
+An error message slides down when the user tries to post a tweet that is over 140 characters. It will restrict them from posting until they have reduced the character count to 140 or below.
 <img src="public/images/Tweet Overlimit.png" alt="Tweet Overlimit">
 
 
