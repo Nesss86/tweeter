@@ -36,23 +36,23 @@ main, .container {
   background-color: var(--primary-bg);
   padding: 120px 20px 20px;
   display: flex;
-  flex-direction: row; /* Default: Two-column layout */
+  flex-direction: row; 
 }
 
 /* Left column: Header */
 header {
-  flex: 0 0 30%; /* 30% width for the left column */
-  margin-right: 20px; /* Spacing between columns */
-  align-self: flex-start; /* Prevents header from stretching */
-  height: auto; /* Keep height dynamic based on content */
+  flex: 0 0 30%; 
+  margin-right: 20px; 
+  align-self: flex-start; 
+  height: auto; 
 }
 
 /* Right column: Content (New Tweet + Tweets Container) */
 .content {
-  flex: 1; /* Takes up the rest of the width */
+  flex: 1; 
   display: flex;
-  flex-direction: column; /* Stack new tweet and tweets container */
-  height: 100%; /* Ensure content stretches vertically */
+  flex-direction: column; 
+  height: 100%; 
 }
 
 .new-tweet {
@@ -62,10 +62,10 @@ header {
 .tweets-container {
   margin-top: 20px;
   display: flex;
-  flex-direction: column; /* Stack tweets vertically */
-  flex-grow: 1; /* Make sure tweets container grows to fill available space */
-  justify-content: flex-end; /* Push the footer (or last tweet) to the bottom */
-  height: 100%; /* Full height */
+  flex-direction: column; 
+  flex-grow: 1; 
+  justify-content: flex-end; 
+  height: 100%; 
 }
 
 /* Ensure the footer is part of the tweets container */
@@ -74,49 +74,48 @@ header {
   text-align: center;
   padding: 10px;
   border-top: 1px solid var(--primary-border);
-  margin-top: auto; /* Ensure footer stays at the bottom of the tweets container */
+  margin-top: auto; 
 }
 
 /* One-column layout (for width < 1024px) */
 @media screen and (max-width: 1024px) {
   body {
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
+    margin: 0; 
+    padding: 0; 
   }
 
   nav {
-    display: none; /* Hide the nav for reduced screens */
+    display: none; 
   }
 
   main, .container {
-    flex-direction: column; /* Stack all elements vertically */
-    padding: 0; /* Remove padding for full stacking */
-    height: 100%; /* Ensure content stretches to fill screen */
+    flex-direction: column; 
+    padding: 0; 
+    height: 100%; 
   }
-
   header {
-    width: 100%; /* Full width for header */
-    margin: 0; /* Remove any margin */
-    padding: 10px; /* Add consistent padding for spacing */
+    width: 100%; 
+    margin: 0; 
+    padding: 10px; 
   }
 
   .content {
-    width: 100%; /* Full width for content */
-    margin: 0; /* Remove margins for a cleaner layout */
+    width: 100%; 
+    margin: 0; 
   }
 
   .new-tweet {
-    margin-bottom: 20px; /* Add space between tweet form and tweets */
+    margin-bottom: 20px; 
   }
 
   .tweets-container {
     margin-top: 20px;
-    flex-grow: 1; /* Allow the tweets container to take up available space */
-    padding-bottom: 20px; /* Add padding to the bottom to ensure footer stays at the bottom */
+    flex-grow: 1; 
+    padding-bottom: 20px; 
   }
 
   footer {
-    margin-top: auto; /* Ensure the footer is aligned at the bottom of the tweet container */
+    margin-top: auto;
   }
 }
 
